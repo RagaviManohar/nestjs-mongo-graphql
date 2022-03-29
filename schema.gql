@@ -1,0 +1,35 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type WalletDetails {
+  walletAddress: String!
+  walletName: String!
+}
+
+type UserType {
+  name: String!
+  email: String!
+  walletDetails: WalletDetails!
+}
+
+input WalletDetailsInput {
+  walletAddress: String!
+  walletName: String!
+}
+
+input UserInputType {
+  name: String!
+  email: String!
+  walletDetails: WalletDetailsInput!
+}
+
+type Query {
+  user: [UserType!]!
+}
+
+type Mutation {
+  createUser(input: UserInputType!): UserType!
+  updateUser(id: String!, input: UserInputType!): UserType!
+  deleteUser(id: String!): UserType!
+}
